@@ -244,7 +244,7 @@ function displayQuestion() {
     <input type="radio" name="choice" value="${QUESTIONLIST[i].answers[2].correct}">${QUESTIONLIST[i].answers[2].answer}<br>
     <input type="radio" name="choice" value="${QUESTIONLIST[i].answers[3].correct}">${QUESTIONLIST[i].answers[3].answer}<br>
          `;
-    $(QUESTION_SPAN).html(QUESTIONLIST[i].question);
+    $(QUESTION_SPAN).html(`Question #${i+1}<br>${QUESTIONLIST[i].question}`);
     $(ANSWER_SPAN).html(ANSWERDISPLAY);
 }
 
