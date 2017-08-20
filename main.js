@@ -237,6 +237,7 @@ function handleSubmitClick() {
 
 }
 
+
 function displayQuestion() {
     const ANSWERDISPLAY = `
 <fieldset>
