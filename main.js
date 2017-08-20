@@ -240,10 +240,10 @@ function handleSubmitClick() {
 
 function displayQuestion() {
     const ANSWERDISPLAY = `
-    <input type="radio" name="choice" aria-describedby = "question" value="${QUESTIONLIST[i].answers[0].correct}">${QUESTIONLIST[i].answers[0].answer}<br>
-    <input type="radio" name="choice" aria-describedby = "question" value="${QUESTIONLIST[i].answers[1].correct}">${QUESTIONLIST[i].answers[1].answer}<br>
-    <input type="radio" name="choice" aria-describedby = "question" value="${QUESTIONLIST[i].answers[2].correct}">${QUESTIONLIST[i].answers[2].answer}<br>
-    <input type="radio" name="choice" aria-describedby = "question" value="${QUESTIONLIST[i].answers[3].correct}">${QUESTIONLIST[i].answers[3].answer}<br>
+    <input type="radio" name="choice" aria-label = "${QUESTIONLIST[i].answers[0].answer}" "value="${QUESTIONLIST[i].answers[0].correct}">${QUESTIONLIST[i].answers[0].answer}<br>
+    <input type="radio" name="choice" aria-label = "${QUESTIONLIST[i].answers[1].answer}" value="${QUESTIONLIST[i].answers[1].correct}">${QUESTIONLIST[i].answers[1].answer}<br>
+    <input type="radio" name="choice" aria-label = "${QUESTIONLIST[i].answers[2].answer}" value="${QUESTIONLIST[i].answers[2].correct}">${QUESTIONLIST[i].answers[2].answer}<br>
+    <input type="radio" name="choice" aria-label = "${QUESTIONLIST[i].answers[3].answer}" value="${QUESTIONLIST[i].answers[3].correct}">${QUESTIONLIST[i].answers[3].answer}<br>
          `;
     $(QUESTION_SPAN).html(`Question #${i+1}<br>${QUESTIONLIST[i].question}`);
     $(ANSWER_SPAN).html(ANSWERDISPLAY);
