@@ -1,10 +1,12 @@
 // JavaScript Document
 "use strict";
+/* eslint-env es6, jquery*/
+
 const FORMID = "#multipleChoices";
 const QUESTION_SPAN = ".js-quizQuestion";
 const ANSWER_SPAN = ".js-quizAnswers";
 const RETAKE_QUIZ = ".js-retakeQuiz";
-const HIDEOUT = ".js-hideOut";
+//const HIDEOUT = ".js-hideOut";
 
 
 let i = 0; //counts questions
@@ -214,8 +216,7 @@ function handleSubmitClick() {
 
         if (ANSWER === undefined) {
             $('.js-quizResult').text("Please select an answer.");
-            i = i;
-        } else if (ANSWER == "false") {
+        } else if (ANSWER === "false") {
             const CORRECT = QUESTIONLIST[i].answers.filter(function (miniArr) {
                 return miniArr.correct === true;
             });
@@ -249,17 +250,27 @@ function displayQuestion() {
     $(ANSWER_SPAN).html(ANSWERDISPLAY);
 }
 
+/* global location */
 function endQuiz() {
     $('.retake').toggle();
     $('.hideOut').hide();
     $(RETAKE_QUIZ).click(function () {
         location.reload();
+        location.re
     });
 }
 
 function renderPage() {
     handleSubmitClick();
     displayQuestion();
+}
+/* global document */
+var btn = document.querySelector('.mouse-cursor-gradient-tracking')
+btn.onmousemove = function(e) {
+  var x = e.pageX - btn.offsetLeft
+  var y = e.pageY - btn.offsetTop
+  btn.style.setProperty('--x', x + 'px')
+  btn.style.setProperty('--y', y + 'px')
 }
 
 $(renderPage);
